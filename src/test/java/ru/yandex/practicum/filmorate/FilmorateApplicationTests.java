@@ -1,10 +1,10 @@
 package ru.yandex.practicum.filmorate;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.yandex.practicum.filmorate.controllers.UserController;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
-import ru.yandex.practicum.filmorate.model.Film;
 import ru.yandex.practicum.filmorate.model.User;
 
 import java.time.LocalDate;
@@ -14,11 +14,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class FilmorateApplicationTests {
 
-	private final Film film = new Film();
+	User user;
+	UserController userController;
 
-	User user = new User();
-
-	UserController userController = new UserController();
+	@BeforeEach
+	void initFields() {
+		user = new User();
+		userController = new UserController();
+	}
 
     @Test
 	void userCreateValidationEmail() {

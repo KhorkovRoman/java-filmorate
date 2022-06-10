@@ -1,5 +1,6 @@
 package ru.yandex.practicum.filmorate;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.yandex.practicum.filmorate.controllers.FilmController;
@@ -14,10 +15,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 class FilmControllerTest {
 
+	Film film;
+	FilmController filmController;
+	String DESCRIPTION_LENGTH_OVER_200 = "fgj;s,ewlrpg;bmlgng;lnmjdklgja" +
+			"lksjflksdfjaldskfj;alsdfj;alksdjf;alsdjf;alksdjf;alksdjflaksdjfkdjfakdljfkldasjf" +
+			"fgj;s,ewlrpg;bmlgng;lnmjdklgjalksjflksdfjaldskfj;alsdfj;alksdjf;alsdjf;alksdjf;a" +
+			"lksdjflaksdjfkdjfakdljfkldasjf";
 
-	Film film = new Film();
+	@BeforeEach
+	void initFields() {
+		film = new Film();
+		filmController = new FilmController();
+	}
 
-	FilmController filmController = new FilmController();
 
     @Test
 	void filmCreateValidationName() {
@@ -35,9 +45,7 @@ class FilmControllerTest {
 
 	@Test
 	void filmCreateValidationDescription() {
-		film.setDescription("fgj;s,ewlrpg;bmlgng;lnmjdklgjalksjflksdfjaldskfj;alsdfj;alks" +
-				"djf;alsdjf;alksdjf;alksdjflaksdjfkdjfakdljfkldasjffgj;s,ewlrpg;bmlgng;lnm" +
-				"jdklgjalksjflksdfjaldskfj;alsdfj;alksdjf;alsdjf;alksdjf;alksdjflaksdjfkdjfakdljfkldasjf");
+		film.setDescription(DESCRIPTION_LENGTH_OVER_200);
 		assertThrows(ValidationException.class, () -> filmController.create(film));
 
 		film.setName("Name");
