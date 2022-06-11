@@ -47,7 +47,7 @@ public class UserController {
             log.info("Пользователь " + user + " успешно обновлен.");
         } else {
             log.warn("Пользователя с id " + user.getId() + " в базе нет.");
-            throw new ValidationException(HttpStatus.BAD_REQUEST,
+            throw new ValidationException(HttpStatus.INTERNAL_SERVER_ERROR,
                     "Пользователя с id " + user.getId() + " в базе нет.");
         }
         return user;

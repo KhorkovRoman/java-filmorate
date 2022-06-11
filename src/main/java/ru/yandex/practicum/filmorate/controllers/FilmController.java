@@ -44,7 +44,7 @@ public class FilmController {
             log.info("Фильм " + film + " успешно обновлен.");
         } else {
             log.warn("Фильма с id " + film.getId() + " в базе нет.");
-            throw new ValidationException(HttpStatus.BAD_REQUEST,
+            throw new ValidationException(HttpStatus.INTERNAL_SERVER_ERROR,
                     "Фильма с id " + film.getId() + " в базе нет.");
         }
 

@@ -28,7 +28,6 @@ class FilmControllerTest {
 		filmController = new FilmController();
 	}
 
-
     @Test
 	void filmCreateValidationName() {
 		film.setName("");
