@@ -12,10 +12,10 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class FilmorateApplicationTests {
+class UserControllerTest {
 
-	User user;
-	UserController userController;
+	private User user;
+	private UserController userController;
 
 	@BeforeEach
 	void initFields() {

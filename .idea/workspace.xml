@@ -8,9 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/FilmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmorateApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,7 @@
       <recent name="ru.yandex.practicum.filmorate" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FilmorateApplicationTests">
+  <component name="RunManager" selected="JUnit.UserControllerTest">
     <configuration name="FilmControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
@@ -154,6 +153,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-filmorate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.yandex.practicum.filmorate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FilmorateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="java-filmorate" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.yandex.practicum.filmorate.FilmorateApplication" />
@@ -163,8 +177,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FilmorateApplicationTests" />
+        <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.FilmControllerTest" />
+        <item itemvalue="JUnit.FilmorateApplicationTests" />
         <item itemvalue="JUnit.FilmorateApplicationTests.userCreateValidationBirthday" />
         <item itemvalue="JUnit.FilmorateApplicationTests.userCreateValidationEmail" />
       </list>
@@ -200,6 +215,7 @@
       <workItem from="1654878497265" duration="2615000" />
       <workItem from="1654881175986" duration="3640000" />
       <workItem from="1654890313974" duration="724000" />
+      <workItem from="1654980507044" duration="239000" />
     </task>
     <servers />
   </component>

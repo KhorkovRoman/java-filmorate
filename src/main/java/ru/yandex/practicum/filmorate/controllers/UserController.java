@@ -17,7 +17,7 @@ import java.util.Map;
 @RequestMapping("/users")
 public class UserController {
 
-    int userId = 0;
+    private int userId = 0;
 
     private final Map<Integer, User> users = new HashMap<>();
 

@@ -15,9 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 class FilmControllerTest {
 
-	Film film;
-	FilmController filmController;
-	String DESCRIPTION_LENGTH_OVER_200 = "fgj;s,ewlrpg;bmlgng;lnmjdklgja" +
+	private Film film;
+	private FilmController filmController;
+	private String DESCRIPTION_LENGTH_OVER_200 = "fgj;s,ewlrpg;bmlgng;lnmjdklgja" +
 			"lksjflksdfjaldskfj;alsdfj;alksdjf;alsdjf;alksdjf;alksdjflaksdjfkdjfakdljfkldasjf" +
 			"fgj;s,ewlrpg;bmlgng;lnmjdklgjalksjflksdfjaldskfj;alsdfj;alksdjf;alsdjf;alksdjf;a" +
 			"lksdjflaksdjfkdjfakdljfkldasjf";
