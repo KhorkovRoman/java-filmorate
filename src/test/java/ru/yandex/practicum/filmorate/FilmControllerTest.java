@@ -24,8 +24,8 @@ class FilmControllerTest {
 
 	@BeforeEach
 	void initFields() {
-		film = new Film();
-		filmController = new FilmController();
+//		film = new Film();
+//		filmController = new FilmController(inMemoryFilmStorage);
 	}
 
     @Test

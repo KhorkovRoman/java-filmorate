@@ -19,8 +19,8 @@ class UserControllerTest {
 
 	@BeforeEach
 	void initFields() {
-		user = new User();
-		userController = new UserController();
+//		user = new User();
+//		userController = new UserController(inMemoryUserStorage);
 	}
 
     @Test
