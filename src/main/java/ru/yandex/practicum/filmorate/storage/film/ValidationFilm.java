@@ -2,12 +2,14 @@ package ru.yandex.practicum.filmorate.storage.film;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.Film;
 
 import java.time.LocalDate;
 
 @Slf4j
+@Component
 public class ValidationFilm {
     public void validateFilm(Film film) {
         if (film.getName() == null || film.getName().isBlank()) {

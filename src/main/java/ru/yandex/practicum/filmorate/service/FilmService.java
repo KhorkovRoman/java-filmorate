@@ -6,19 +6,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.Film;
-import ru.yandex.practicum.filmorate.model.User;
-import ru.yandex.practicum.filmorate.storage.film.ComparatorFilmsLikes;
 import ru.yandex.practicum.filmorate.storage.film.FilmStorage;
 import ru.yandex.practicum.filmorate.storage.user.UserStorage;
 
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Slf4j
 @Service
 public class FilmService {
-
-    ComparatorFilmsLikes comparatorFilmsLikes = new ComparatorFilmsLikes();
 
     private final FilmStorage filmStorage;
     private final UserStorage userStorage;
@@ -29,13 +26,25 @@ public class FilmService {
         this.userStorage = userStorage;
     }
 
-    public FilmStorage getFilmStorage() {
-        return filmStorage;
+    public Collection<Film> getAllFilms() {
+        return filmStorage.getAllFilms();
+    }
+
+    public Film createFilm(Film film) {
+        return filmStorage.createFilm(film);
+    }
+
+    public Film updateFilm(Film film) {
+        return filmStorage.updateFilm(film);
+    }
+
+    public void deleteFilm(Film film) {
+        filmStorage.deleteFilm(film);
     }
 
     public Film getFilm(Integer filmId) {
         if (filmStorage.getFilms().containsKey(filmId)) {
-            Film film = filmStorage.getFilms().get(filmId);
+            Film film = filmStorage.getFilmById(filmId);
             log.info("Фильм c id " + filmId + " найден в базе.");
             return film;
         } else {
@@ -47,7 +56,7 @@ public class FilmService {
     public Film addLike(Integer filmId, Integer userId) {
         if (filmStorage.getFilms().containsKey(filmId)) {
             if (userStorage.getUsers().containsKey(userId)) {
-                Film film = filmStorage.getFilms().get(filmId);
+                Film film = filmStorage.getFilmById(filmId);
                 Set<Integer> filmLikes = film.getLikes();
                 filmLikes.add(userId);
                 log.info("Фильм c id " + filmId + " успешно лайкнут " +
@@ -66,7 +75,7 @@ public class FilmService {
     public void deleteLike(Integer filmId, Integer userId) {
         if (filmStorage.getFilms().containsKey(filmId)) {
             if (userStorage.getUsers().containsKey(userId)) {
-                Film film = filmStorage.getFilms().get(filmId);
+                Film film = filmStorage.getFilmById(filmId);
                 Set<Integer> filmLikes = film.getLikes();
                 filmLikes.remove(userId);
 
@@ -85,21 +94,12 @@ public class FilmService {
     public List<Film> getPopularFilms(Integer count) {
         Map<Integer, Film> filmsMap = filmStorage.getFilms();
         List<Film> filmsList = new ArrayList<>();
-
         for (Integer i: filmsMap.keySet()) {
             filmsList.add(filmsMap.get(i));
         }
-
-        filmsList.sort(comparatorFilmsLikes);
-
-        int countPlus = 0;
-        List<Film> filmsPopularList = new ArrayList<>();
-        for (Film film: filmsList) {
-            if (++countPlus <= count) {
-                filmsPopularList.add(film);
-            }
-        }
-
-        return filmsPopularList;
+        return filmsList.stream()
+                .sorted()
+                .limit(count)
+                .collect(Collectors.toList());
     }
 }

@@ -9,6 +9,7 @@ import ru.yandex.practicum.filmorate.model.User;
 import ru.yandex.practicum.filmorate.storage.user.UserStorage;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -21,21 +22,33 @@ public class UserService {
         this.userStorage = userStorage;
     }
 
-    public UserStorage getUserStorage() {
-        return userStorage;
+    public Collection<User> getAllUsers() {
+        return userStorage.getAllUsers();
+    }
+
+    public User createUser(User user) {
+        return userStorage.createUser(user);
+    }
+
+    public User updateUser(User user) {
+        return userStorage.updateUser(user);
+    }
+
+    public void deleteUser(User user) {
+        userStorage.deleteUser(user);
     }
 
     public User addFriend(Integer userId, Integer friendId) {
         if (userStorage.getUsers().containsKey(userId)) {
             if (userStorage.getUsers().containsKey(friendId)) {
 
-                User user = userStorage.getUsers().get(userId);
+                User user = userStorage.getUserById(userId);
                 Set<Integer> userFriends = user.getFriends();
                 userFriends.add(friendId);
                 log.info("Пользователь c id " + friendId + " успешно записан " +
                         "в друзья к " + user + ".");
 
-                User friendUser = userStorage.getUsers().get(friendId);
+                User friendUser = userStorage.getUserById(friendId);
                 Set<Integer> friendUserFriends = friendUser.getFriends();
                 friendUserFriends.add(userId);
 
@@ -57,13 +70,13 @@ public class UserService {
         if (userStorage.getUsers().containsKey(userId)) {
             if (userStorage.getUsers().containsKey(friendId)) {
 
-                User user = userStorage.getUsers().get(userId);
+                User user = userStorage.getUserById(userId);
                 Set<Integer> userFriends = user.getFriends();
                 userFriends.remove(friendId);
                 log.info("Пользователь c id " + friendId + " успешно удален " +
                         "из друзей " + user + ".");
 
-                User userFriend = userStorage.getUsers().get(friendId);
+                User userFriend = userStorage.getUserById(friendId);
                 Set<Integer> userFriendFriends = userFriend.getFriends();
                 userFriendFriends.remove(userId);
                 log.info("Пользователь c id " + userId + " успешно удален " +
@@ -81,7 +94,7 @@ public class UserService {
 
     public User getUser(Integer userId) {
         if (userStorage.getUsers().containsKey(userId)) {
-            User user = userStorage.getUsers().get(userId);
+            User user = userStorage.getUserById(userId);
             log.info("Пользователь c id " + userId + " найден в базе.");
             return user;
         } else {
@@ -92,12 +105,12 @@ public class UserService {
 
     public List<User> getUserFriends(Integer userId) {
         if (userStorage.getUsers().containsKey(userId)) {
-            User user = userStorage.getUsers().get(userId);
+            User user = userStorage.getUserById(userId);
             Set<Integer> userFriends = user.getFriends();
 
             List<User> userList = new ArrayList<>();
             for (Integer i: userFriends) {
-                User userToAdd = userStorage.getUsers().get(i);
+                User userToAdd = userStorage.getUserById(i);
                 userList.add(userToAdd);
             }
 
@@ -112,29 +125,28 @@ public class UserService {
     public List<User> getUserFriendsCommon(Integer userId, Integer otherId) {
         if (userStorage.getUsers().containsKey(userId)) {
             if (userStorage.getUsers().containsKey(otherId)) {
-                User user = userStorage.getUsers().get(userId);
+                User user = userStorage.getUserById(userId);
                 Set<Integer> userFriends = user.getFriends();
-
                 List<User> userList = new ArrayList<>();
                 for (Integer i: userFriends) {
                     User userToAdd = userStorage.getUsers().get(i);
                     userList.add(userToAdd);
                 }
 
-                User otherUser = userStorage.getUsers().get(otherId);
+                User otherUser = userStorage.getUserById(otherId);
                 Set<Integer> otherUserFriends = otherUser.getFriends();
-
                 List<User> otherUserFriendList = new ArrayList<>();
                 for (Integer i: otherUserFriends) {
-                    User userToAdd = userStorage.getUsers().get(i);
+                    User userToAdd = userStorage.getUserById(i);
                     otherUserFriendList.add(userToAdd);
                 }
 
-                List<User> commonList = new ArrayList<>(userList);
-                commonList.retainAll(otherUserFriendList);
-                log.info("Список пользователей выведен." + commonList);
+                List<User> matches = userList.stream()
+                        .filter(otherUserFriendList::contains)
+                        .collect(Collectors.toList());
 
-                return commonList;
+                log.info("Список пользователей выведен." + matches);
+                return matches;
             } else {
                 throw new ValidationException(HttpStatus.NOT_FOUND,
                         "Пользователя c id " + otherId + " нет в базе.");

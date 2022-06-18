@@ -7,6 +7,8 @@ public interface UserStorage {
 
     Map<Integer, User> getUsers();
 
+    User getUserById(Integer userId);
+
     Collection<User> getAllUsers();
 
     User createUser(User user);

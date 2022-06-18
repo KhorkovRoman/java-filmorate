@@ -1,6 +1,7 @@
 package ru.yandex.practicum.filmorate.storage.film;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
@@ -14,13 +15,23 @@ import java.util.Map;
 @Component
 public class InMemoryFilmStorage implements FilmStorage {
 
-    ValidationFilm validationFilm = new ValidationFilm();
+    ValidationFilm validationFilm;
     private int filmId = 0;
     private final Map<Integer, Film> films = new HashMap<>();
+
+    @Autowired
+    public InMemoryFilmStorage(ValidationFilm validationFilm) {
+        this.validationFilm = validationFilm;
+    }
 
     @Override
     public Map<Integer, Film> getFilms() {
         return films;
+    }
+
+    @Override
+    public Film getFilmById(Integer filmId) {
+        return films.get(filmId);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package ru.yandex.practicum.filmorate.storage.user;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
@@ -14,13 +15,22 @@ import java.util.Map;
 @Component
 public class InMemoryUserStorage implements UserStorage{
 
-    ValidationUser validationUser = new ValidationUser();
+    ValidationUser validationUser;
     private int userId = 0;
     private final Map<Integer, User> users = new HashMap<>();
+
+    @Autowired
+    public InMemoryUserStorage(ValidationUser validationUser) {
+        this.validationUser = validationUser;
+    }
 
     @Override
     public Map<Integer, User> getUsers() {
         return users;
+    }
+
+    public User getUserById(Integer userId) {
+        return users.get(userId);
     }
 
     @Override
