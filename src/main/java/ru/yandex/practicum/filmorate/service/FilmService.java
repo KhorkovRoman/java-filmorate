@@ -10,7 +10,6 @@ import ru.yandex.practicum.filmorate.storage.film.FilmStorage;
 import ru.yandex.practicum.filmorate.storage.user.UserStorage;
 
 import java.util.*;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -43,51 +42,48 @@ public class FilmService {
     }
 
     public Film getFilm(Integer filmId) {
-        if (filmStorage.getFilms().containsKey(filmId)) {
-            Film film = filmStorage.getFilmById(filmId);
-            log.info("Фильм c id " + filmId + " найден в базе.");
-            return film;
-        } else {
+        Film film = filmStorage.getFilmById(filmId);
+        if (film == null) {
             throw new ValidationException(HttpStatus.NOT_FOUND,
                     "Фильма c id " + filmId + " нет в базе.");
         }
+        log.info("Фильм c id " + filmId + " найден в базе.");
+        return film;
     }
 
     public Film addLike(Integer filmId, Integer userId) {
-        if (filmStorage.getFilms().containsKey(filmId)) {
-            if (userStorage.getUsers().containsKey(userId)) {
-                Film film = filmStorage.getFilmById(filmId);
-                Set<Integer> filmLikes = film.getLikes();
-                filmLikes.add(userId);
-                log.info("Фильм c id " + filmId + " успешно лайкнут " +
-                        "пользователем " + userId + ".");
-                return film;
-            } else {
+        if (userStorage.getUsers().containsKey(userId)) {
+            Film film = filmStorage.getFilmById(filmId);
+            if (film == null) {
                 throw new ValidationException(HttpStatus.NOT_FOUND,
-                        "Пользователя c id " + userId + " нет в базе.");
+                        "Фильма c id " + filmId + " нет в базе.");
             }
+            Set<Integer> filmLikes = film.getLikes();
+            filmLikes.add(userId);
+            log.info("Фильм c id " + filmId + " успешно лайкнут " +
+                    "пользователем " + userId + ".");
+            return film;
         } else {
             throw new ValidationException(HttpStatus.NOT_FOUND,
-                "Фильма c id " + filmId + " нет в базе.");
+                    "Пользователя c id " + userId + " нет в базе.");
         }
     }
 
     public void deleteLike(Integer filmId, Integer userId) {
-        if (filmStorage.getFilms().containsKey(filmId)) {
-            if (userStorage.getUsers().containsKey(userId)) {
-                Film film = filmStorage.getFilmById(filmId);
-                Set<Integer> filmLikes = film.getLikes();
-                filmLikes.remove(userId);
-
-                log.info("У фильма c id " + filmId + " успешно удален лайк " +
-                        "пользователя с id " + userId + ".");
-            } else {
+        if (userStorage.getUsers().containsKey(userId)) {
+            Film film = filmStorage.getFilmById(filmId);
+            if (film == null) {
                 throw new ValidationException(HttpStatus.NOT_FOUND,
-                        "Пользователя c id " + userId + " нет в базе.");
+                        "Фильма c id " + filmId + " нет в базе.");
             }
+            Set<Integer> filmLikes = film.getLikes();
+            filmLikes.remove(userId);
+
+            log.info("У фильма c id " + filmId + " успешно удален лайк " +
+                    "пользователя с id " + userId + ".");
         } else {
             throw new ValidationException(HttpStatus.NOT_FOUND,
-                    "Фильма c id " + filmId + " нет в базе.");
+                    "Пользователя c id " + userId + " нет в базе.");
         }
     }
 
