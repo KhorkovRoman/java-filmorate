@@ -11,11 +11,13 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="filmorate" target="11" />
       <module name="java-filmorate" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="filmorate" options="-parameters" />
       <module name="java-filmorate" options="-parameters" />
     </option>
   </component>
