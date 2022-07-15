@@ -5,7 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/FriendController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/GenreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/LikeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/MpaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FilmDBStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FriendDBStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/GenreDBStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/LikeDBStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/MpaDBStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/UserDBStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/FriendStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Mpa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/service/FriendService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/service/GenreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/service/LikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/service/MpaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/film/GenreStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/film/LikeStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/film/MpaStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/user/FriendStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmoRateApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/java-filmorate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/java-filmorate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/service/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/film/FilmStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/film/FilmStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/film/InMemoryFilmStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/user/InMemoryUserStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/user/UserStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/storage/user/UserStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +73,24 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="controllers-films-users" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -74,8 +129,19 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;f0df34eea21e3d373f145aba7609027e&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;H2&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;H2&quot;
+    ]
   }
 }</component>
   <component name="Push.Settings">
@@ -84,12 +150,16 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roman\dev\java-filmorate\src\main\resources" />
+      <recent name="C:\Users\Roman\dev\java-filmorate" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.yandex.practicum.filmorate" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.FilmorateApplication">
-    <configuration name="FilmControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FilmControllerTest.filmCreateValidationDuration">
+    <configuration name="FilmControllerTest.filmCreateValidationDuration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -99,12 +169,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
       <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="filmCreateValidationDuration" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmorateApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FilmControllerTest.filmCreateValidationReleaseDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -113,8 +184,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmorateApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmControllerTest" />
+      <option name="METHOD_NAME" value="filmCreateValidationReleaseDate" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FilmControllerTest.filmCreateValidationDuration" />
+        <item itemvalue="JUnit.FilmControllerTest.filmCreateValidationReleaseDate" />
         <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="JUnit.FilmControllerTest" />
-        <item itemvalue="JUnit.FilmorateApplicationTests" />
-        <item itemvalue="JUnit.FilmorateApplicationTests.userCreateValidationBirthday" />
         <item itemvalue="JUnit.FilmorateApplicationTests.userCreateValidationEmail" />
+        <item itemvalue="JUnit.FilmorateApplicationTests.userCreateValidationBirthday" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +308,38 @@
       <workItem from="1655567258973" duration="11022000" />
       <workItem from="1655656954168" duration="3730000" />
       <workItem from="1656531244217" duration="1301000" />
-      <workItem from="1656534347382" duration="85000" />
+      <workItem from="1656534347382" duration="765000" />
+      <workItem from="1656698289949" duration="2038000" />
+      <workItem from="1656703511848" duration="4000" />
+      <workItem from="1656703748202" duration="53000" />
+      <workItem from="1656779623178" duration="542000" />
+      <workItem from="1656780677564" duration="9092000" />
+      <workItem from="1656792688374" duration="142000" />
+      <workItem from="1656792857925" duration="82000" />
+      <workItem from="1656792974191" duration="153000" />
+      <workItem from="1656793153470" duration="3268000" />
+      <workItem from="1656865025573" duration="10904000" />
+      <workItem from="1656922778854" duration="8606000" />
+      <workItem from="1656951067137" duration="19000" />
+      <workItem from="1657038130039" duration="8189000" />
+      <workItem from="1657091563751" duration="3463000" />
+      <workItem from="1657110791069" duration="1580000" />
+      <workItem from="1657124955936" duration="14212000" />
+      <workItem from="1657205958981" duration="7989000" />
+      <workItem from="1657220950545" duration="8207000" />
+      <workItem from="1657303407446" duration="6021000" />
+      <workItem from="1657468757962" duration="9064000" />
+      <workItem from="1657561701594" duration="14171000" />
+      <workItem from="1657609757619" duration="3842000" />
+      <workItem from="1657625181375" duration="551000" />
+      <workItem from="1657638374573" duration="278000" />
+      <workItem from="1657645579062" duration="7253000" />
+      <workItem from="1657695859544" duration="4256000" />
+      <workItem from="1657728047749" duration="17127000" />
+      <workItem from="1657782269361" duration="5458000" />
+      <workItem from="1657819840845" duration="14049000" />
+      <workItem from="1657898952314" duration="8302000" />
+      <workItem from="1657913214517" duration="1018000" />
     </task>
     <servers />
   </component>
@@ -254,7 +357,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="add-friends-likes" />
+                        <option value="add-database" />
                       </list>
                     </value>
                   </entry>
@@ -265,6 +368,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/java_filmorate$FilmControllerTest.ic" NAME="FilmControllerTest Coverage Results" MODIFIED="1654797507246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

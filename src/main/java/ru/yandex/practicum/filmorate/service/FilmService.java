@@ -7,38 +7,28 @@ import org.springframework.stereotype.Service;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.Film;
 import ru.yandex.practicum.filmorate.storage.film.FilmStorage;
-import ru.yandex.practicum.filmorate.storage.user.UserStorage;
+import ru.yandex.practicum.filmorate.storage.film.GenreStorage;
+import ru.yandex.practicum.filmorate.storage.film.ValidationFilm;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
 public class FilmService {
 
     private final FilmStorage filmStorage;
-    private final UserStorage userStorage;
+    private final ValidationFilm validationFilm;
 
     @Autowired
-    public FilmService(FilmStorage filmStorage, UserStorage userStorage) {
+    public FilmService(FilmStorage filmStorage,
+                       ValidationFilm validationFilm) {
         this.filmStorage = filmStorage;
-        this.userStorage = userStorage;
-    }
-
-    public Collection<Film> getAllFilms() {
-        return filmStorage.getAllFilms();
+        this.validationFilm = validationFilm;
     }
 
     public Film createFilm(Film film) {
+        validationFilm.validateFilm(film);
         return filmStorage.createFilm(film);
-    }
-
-    public Film updateFilm(Film film) {
-        return filmStorage.updateFilm(film);
-    }
-
-    public void deleteFilm(Film film) {
-        filmStorage.deleteFilm(film);
     }
 
     public Film getFilm(Integer filmId) {
@@ -51,51 +41,25 @@ public class FilmService {
         return film;
     }
 
-    public Film addLike(Integer filmId, Integer userId) {
-        if (userStorage.getUsers().containsKey(userId)) {
-            Film film = filmStorage.getFilmById(filmId);
-            if (film == null) {
-                throw new ValidationException(HttpStatus.NOT_FOUND,
-                        "Фильма c id " + filmId + " нет в базе.");
-            }
-            Set<Integer> filmLikes = film.getLikes();
-            filmLikes.add(userId);
-            log.info("Фильм c id " + filmId + " успешно лайкнут " +
-                    "пользователем " + userId + ".");
-            return film;
-        } else {
-            throw new ValidationException(HttpStatus.NOT_FOUND,
-                    "Пользователя c id " + userId + " нет в базе.");
-        }
+    public Collection<Film> getAllFilms() {
+        return filmStorage.getAllFilms();
     }
 
-    public void deleteLike(Integer filmId, Integer userId) {
-        if (userStorage.getUsers().containsKey(userId)) {
-            Film film = filmStorage.getFilmById(filmId);
-            if (film == null) {
-                throw new ValidationException(HttpStatus.NOT_FOUND,
-                        "Фильма c id " + filmId + " нет в базе.");
-            }
-            Set<Integer> filmLikes = film.getLikes();
-            filmLikes.remove(userId);
-
-            log.info("У фильма c id " + filmId + " успешно удален лайк " +
-                    "пользователя с id " + userId + ".");
-        } else {
-            throw new ValidationException(HttpStatus.NOT_FOUND,
-                    "Пользователя c id " + userId + " нет в базе.");
-        }
+    public Film updateFilm(Film film) {
+        validateFilm(film.getId());
+        validationFilm.validateFilm(film);
+        return filmStorage.updateFilm(film);
     }
 
-    public List<Film> getPopularFilms(Integer count) {
-        Map<Integer, Film> filmsMap = filmStorage.getFilms();
-        List<Film> filmsList = new ArrayList<>();
-        for (Integer i: filmsMap.keySet()) {
-            filmsList.add(filmsMap.get(i));
+    public void deleteFilm(Film film) {
+        filmStorage.deleteFilm(film);
+    }
+
+    public void validateFilm(Integer filmId) {
+        Film film = filmStorage.getFilmById(filmId);
+        if (film == null) {
+            throw new ValidationException(HttpStatus.NOT_FOUND,
+                    "Фильма c id " + filmId + " нет в базе.");
         }
-        return filmsList.stream()
-                .sorted()
-                .limit(count)
-                .collect(Collectors.toList());
     }
 }

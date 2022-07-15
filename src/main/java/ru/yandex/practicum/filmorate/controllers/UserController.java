@@ -8,7 +8,6 @@ import ru.yandex.practicum.filmorate.service.UserService;
 
 import javax.validation.Valid;
 import java.util.Collection;
-import java.util.List;
 
 @RestController
 @Slf4j
@@ -27,6 +26,11 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping("/{userId}")
+    public User getUserById(@PathVariable Integer userId) {
+        return userService.getUserById(userId);
+    }
+
     @PostMapping
     public User create(@Valid @RequestBody User user) {
         return userService.createUser(user);
@@ -40,30 +44,5 @@ public class UserController {
     @DeleteMapping
     public void delete(@Valid @RequestBody User user) {
         userService.deleteUser(user);
-    }
-
-    @PutMapping("/{id}/friends/{friendId}")
-    public User addFriend(@PathVariable Integer id, @PathVariable Integer friendId) {
-        return userService.addFriend(id, friendId);
-    }
-
-    @DeleteMapping("/{id}/friends/{friendId}")
-    public void deleteFriend(@PathVariable Integer id, @PathVariable Integer friendId) {
-        userService.deleteFriend(id, friendId);
-    }
-
-    @GetMapping("/{id}")
-    public User getUser(@PathVariable Integer id) {
-        return userService.getUser(id);
-    }
-
-    @GetMapping("/{id}/friends")
-    public List<User> getUserFriends(@PathVariable Integer id) {
-        return userService.getUserFriends(id);
-    }
-
-    @GetMapping("/{id}/friends/common/{otherId}")
-    public List<User> getUserFriendsCommon(@PathVariable Integer id, @PathVariable Integer otherId) {
-        return userService.getUserFriendsCommon(id, otherId);
     }
 }
