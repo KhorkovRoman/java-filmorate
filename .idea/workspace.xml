@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="">
+    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="feat: добавить картинку схемы базы данных">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -304,8 +304,16 @@
       <workItem from="1657898952314" duration="8302000" />
       <workItem from="1657913214517" duration="3562000" />
       <workItem from="1657969641423" duration="2396000" />
-      <workItem from="1657985294391" duration="466000" />
+      <workItem from="1657985294391" duration="2127000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: добавить картинку схемы базы данных">
+      <created>1657985860045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657985860045</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +341,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: добавить картинку схемы базы данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: добавить картинку схемы базы данных" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
