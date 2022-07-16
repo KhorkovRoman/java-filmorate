@@ -15,4 +15,8 @@ public class User {
     private String login;
     private String name;
     private LocalDate birthday;
+
+    public User(Integer id) {
+        this.id = id;
+    }
 }

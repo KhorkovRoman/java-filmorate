@@ -34,7 +34,9 @@ public class UserDBStorage implements UserStorage {
             stmt.setString(1, user.getEmail());
             stmt.setString(2, user.getLogin());
             if (user.getName().isBlank()) {
-                user.setName(user.getLogin());
+                if (!user.getLogin().isBlank()) {
+                    user.setName(user.getLogin());
+                }
             }
             stmt.setString(3, user.getName());
             final LocalDate birthday = user.getBirthday();
@@ -46,6 +48,7 @@ public class UserDBStorage implements UserStorage {
             return stmt;
         }, keyHolder);
         user.setId(keyHolder.getKey().intValue());
+
         return user;
     }
 
