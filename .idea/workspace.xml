@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="feat: добавить картинку схемы базы данных">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="feat: добавить примеры SQL запросов">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -304,7 +303,7 @@
       <workItem from="1657898952314" duration="8302000" />
       <workItem from="1657913214517" duration="3562000" />
       <workItem from="1657969641423" duration="2396000" />
-      <workItem from="1657985294391" duration="2127000" />
+      <workItem from="1657985294391" duration="2363000" />
     </task>
     <task id="LOCAL-00001" summary="feat: добавить картинку схемы базы данных">
       <created>1657985860045</created>
@@ -313,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657985860045</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: добавить примеры SQL запросов">
+      <created>1657987505275</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657987505275</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +350,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: добавить картинку схемы базы данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: добавить картинку схемы базы данных" />
+    <MESSAGE value="feat: добавить примеры SQL запросов" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: добавить примеры SQL запросов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
