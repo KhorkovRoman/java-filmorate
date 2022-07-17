@@ -25,7 +25,7 @@ public class MpaDBStorage implements MpaStorage {
 
     @Override
     public Mpa getMpaById(Integer mpaId) {
-        final String sqlQuery = "SELECT * FROM MPA WHERE MPA_ID = ?";
+        final String sqlQuery = "SELECT * FROM mpa WHERE mpa_id = ?";
         final List<Mpa> mpa = jdbcTemplate.query(sqlQuery, MpaDBStorage::makeMpa, mpaId);
         if (mpa.size() != 1) {
             throw new ValidationException(HttpStatus.NOT_FOUND,
@@ -36,13 +36,13 @@ public class MpaDBStorage implements MpaStorage {
 
     @Override
     public Collection<Mpa> getAllMpa() {
-        final String sqlQuery = "SELECT * FROM MPA";
+        final String sqlQuery = "SELECT * FROM mpa";
         final List<Mpa> mpa = jdbcTemplate.query(sqlQuery, MpaDBStorage::makeMpa);
         return mpa;
     }
 
     static Mpa makeMpa(ResultSet rs, int rowNum) throws SQLException {
-        return new Mpa(rs.getInt("MPA_ID"),
-                rs.getString("MPA_NAME"));
+        return new Mpa(rs.getInt("mpa_id"),
+                rs.getString("mpa_name"));
     }
 }

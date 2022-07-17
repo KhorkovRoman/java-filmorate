@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="feat: добавить тесты storage">
+    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="feat: доработать тесты storage">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmDBStorageTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FriendDBStorageTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/GenreDBStorageTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/LikeDBStorageTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/MpaDBStorageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FilmDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FilmDBStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FriendDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FriendDBStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/GenreDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/GenreDBStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/LikeDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/LikeDBStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/MpaDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/MpaDBStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/UserDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/UserDBStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Genre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/test.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmoRateApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmoRateApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmoRateApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/UserDBStorageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,39 +84,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Roman/dev/java-filmorate/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "spring.configuration.checksum": "f0df34eea21e3d373f145aba7609027e"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Roman/dev/java-filmorate/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f0df34eea21e3d373f145aba7609027e&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "H2"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;H2&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "H2"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;H2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="controllers-films-users" />
@@ -124,23 +134,16 @@
       <recent name="ru.yandex.practicum.filmorate" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FilmoRateApplicationTests">
-    <configuration name="FilmoRateApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.FilmorateApplication">
+    <configuration name="All in java-filmorate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.yandex.practicum.filmorate.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmoRateApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmoRateApplicationTests.testDeleteFriend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GenreDBStorageTests.testGetAllGenres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -149,14 +152,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmoRateApplicationTests" />
-      <option name="METHOD_NAME" value="testDeleteFriend" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.GenreDBStorageTests" />
+      <option name="METHOD_NAME" value="testGetAllGenres" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmoRateApplicationTests.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GenreDBStorageTests.testLoadFilmGenres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -165,14 +168,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmoRateApplicationTests" />
-      <option name="METHOD_NAME" value="testDeleteUser" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.GenreDBStorageTests" />
+      <option name="METHOD_NAME" value="testLoadFilmGenres" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmoRateApplicationTests.testGetCommonFriends" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GenreDBStorageTests.testSetFilmGenres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -181,14 +184,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmoRateApplicationTests" />
-      <option name="METHOD_NAME" value="testGetCommonFriends" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.GenreDBStorageTests" />
+      <option name="METHOD_NAME" value="testSetFilmGenres" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmoRateApplicationTests.testGetUserFriends" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MpaDBStorageTests.testGetAllMpa" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -197,8 +200,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmoRateApplicationTests" />
-      <option name="METHOD_NAME" value="testGetUserFriends" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.MpaDBStorageTests" />
+      <option name="METHOD_NAME" value="testGetAllMpa" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -213,11 +216,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FilmoRateApplicationTests" />
-        <item itemvalue="JUnit.FilmoRateApplicationTests.testGetUserFriends" />
-        <item itemvalue="JUnit.FilmoRateApplicationTests.testDeleteFriend" />
-        <item itemvalue="JUnit.FilmoRateApplicationTests.testGetCommonFriends" />
-        <item itemvalue="JUnit.FilmoRateApplicationTests.testDeleteUser" />
+        <item itemvalue="JUnit.All in java-filmorate" />
+        <item itemvalue="JUnit.GenreDBStorageTests.testGetAllGenres" />
+        <item itemvalue="JUnit.MpaDBStorageTests.testGetAllMpa" />
+        <item itemvalue="JUnit.GenreDBStorageTests.testLoadFilmGenres" />
+        <item itemvalue="JUnit.GenreDBStorageTests.testSetFilmGenres" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +310,8 @@
       <workItem from="1657898952314" duration="8302000" />
       <workItem from="1657913214517" duration="3562000" />
       <workItem from="1657969641423" duration="2396000" />
-      <workItem from="1657985294391" duration="14865000" />
+      <workItem from="1657985294391" duration="16146000" />
+      <workItem from="1658060735317" duration="10694000" />
     </task>
     <task id="LOCAL-00001" summary="feat: добавить картинку схемы базы данных">
       <created>1657985860045</created>
@@ -337,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657999580921</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: доработать тесты storage">
+      <created>1658006801377</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658006801377</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +382,8 @@
     <MESSAGE value="feat: добавить примеры SQL запросов" />
     <MESSAGE value="feat: поправить примеры SQL запросов" />
     <MESSAGE value="feat: добавить тесты storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: добавить тесты storage" />
+    <MESSAGE value="feat: доработать тесты storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: доработать тесты storage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

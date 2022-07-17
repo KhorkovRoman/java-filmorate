@@ -34,7 +34,7 @@ public class LikeDBStorage implements LikeStorage {
         Film film = filmStorage.getFilmById(filmId);
         User user = userStorage.getUserById(userId);
 
-        String sqlQuery = "MERGE INTO FILM_LIKES(FILM_ID, USER_ID) VALUES (?, ?)";
+        String sqlQuery = "MERGE INTO film_likes(film_id, user_id) VALUES (?, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
             PreparedStatement stmt = connection.prepareStatement(sqlQuery);
@@ -49,7 +49,7 @@ public class LikeDBStorage implements LikeStorage {
     }
 
     public void deleteLike(Integer filmId, Integer userId) {
-        final String sqlQuery = "DELETE FROM FILM_LIKES WHERE FILM_ID = ? AND USER_ID = ?";
+        final String sqlQuery = "DELETE FROM film_likes WHERE film_id = ? AND user_id = ?";
         jdbcTemplate.update(sqlQuery, filmId, userId);
 
         log.info("У фильма c id " + filmId + " успешно удален лайк " +
@@ -58,10 +58,10 @@ public class LikeDBStorage implements LikeStorage {
 
     public List<Film> getPopularFilms(Integer count) {
         String sqlQuery = "SELECT *" +
-                " FROM FILMS AS F" +
-                " LEFT OUTER JOIN FILM_LIKES AS Fl ON F.FILM_ID = Fl.FILM_ID" +
-                " GROUP BY F.FILM_ID" +
-                " ORDER BY COUNT(DISTINCT FL.USER_ID) DESC" +
+                " FROM films AS F" +
+                " LEFT OUTER JOIN film_likes AS fL ON f.film_id = fL.film_id" +
+                " GROUP BY f.film_id" +
+                " ORDER BY COUNT(DISTINCT fl.user_id) DESC" +
                 " LIMIT ?";
         return jdbcTemplate.query(sqlQuery, FilmDBStorage::makeFilm, count);
     }

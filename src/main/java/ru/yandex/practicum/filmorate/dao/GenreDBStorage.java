@@ -33,7 +33,7 @@ public class GenreDBStorage implements GenreStorage {
 
     @Override
     public Genre getGenreById(Integer genreId) {
-        final String sqlQuery = "SELECT * FROM GENRES WHERE GENRE_ID = ?";
+        final String sqlQuery = "SELECT * FROM genres WHERE genre_id = ?";
         final List<Genre> genres = jdbcTemplate.query(sqlQuery, GenreDBStorage::makeGenre, genreId);
         if (genres.size() != 1) {
             throw new ValidationException(HttpStatus.NOT_FOUND,
@@ -44,18 +44,18 @@ public class GenreDBStorage implements GenreStorage {
 
     @Override
     public Collection<Genre> getAllGenres() {
-        final String sqlQuery = "SELECT * FROM GENRES";
+        final String sqlQuery = "SELECT * FROM genres";
         final List<Genre> genres = jdbcTemplate.query(sqlQuery, GenreDBStorage::makeGenre);
         return genres;
     }
 
     @Override
     public void setFilmGenres(Film film) {
-        final String sqlQueryFoDel = "DELETE FROM FILM_GENRES WHERE FILM_ID = ?";
+        final String sqlQueryFoDel = "DELETE FROM film_genres WHERE film_id = ?";
         jdbcTemplate.update(sqlQueryFoDel, film.getId());
 
         for (Genre genre: film.getGenres()) {
-            String sqlQuery = "MERGE INTO FILM_GENRES(FILM_ID, GENRE_ID) VALUES(?, ?)";
+            String sqlQuery = "MERGE INTO film_genres(film_id, genre_id) VALUES(?, ?)";
             KeyHolder keyHolder = new GeneratedKeyHolder();
             jdbcTemplate.update(connection -> {
                 PreparedStatement stmt = connection.prepareStatement(sqlQuery);
@@ -69,9 +69,9 @@ public class GenreDBStorage implements GenreStorage {
     @Override
     public LinkedHashSet<Genre> loadFilmGenres(Integer filmId) {
         final String sqlQuery = "SELECT * " +
-                " FROM GENRES AS GE" +
-                " LEFT OUTER JOIN FILM_GENRES AS FG ON GE.GENRE_ID = FG.GENRE_ID" +
-                " WHERE FILM_ID = ?";
+                " FROM genres AS ge" +
+                " LEFT OUTER JOIN film_genres AS fg ON ge.genre_id = fg.genre_id" +
+                " WHERE film_id = ?";
         final LinkedHashSet<Genre> genres =
                 new LinkedHashSet<>(jdbcTemplate.query(sqlQuery, GenreDBStorage::makeGenre, filmId));
 

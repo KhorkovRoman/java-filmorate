@@ -30,18 +30,18 @@ public class FriendDBStorage implements FriendStorage {
     }
 
     public FriendStatus getStatusFriendship(Integer friendStatusId) {
-        final String sqlQuery = "SELECT * FROM FRIEND_STATUSES WHERE FRIEND_STATUS_ID = ?";
+        final String sqlQuery = "SELECT * FROM friend_statuses WHERE friend_status_id = ?";
         final List<FriendStatus> statuses = jdbcTemplate.query(sqlQuery, FriendDBStorage::makeStatus, friendStatusId);
         return statuses.get(0);
     }
 
     static FriendStatus makeStatus(ResultSet rs, int rowNum) throws SQLException {
-        return new FriendStatus(rs.getInt("FRIEND_STATUS_ID"),
-                rs.getString("FRIEND_STATUS_NAME"));
+        return new FriendStatus(rs.getInt("friend_status_id"),
+                rs.getString("friend_status_name"));
     }
 
     public void updateFriendship(User friend, User user, Integer status_id) {
-        String sqlQuery = "MERGE INTO FRIENDSHIP(USER_ID, FRIEND_ID, FRIEND_STATUS_ID) VALUES (?, ?, ?)";
+        String sqlQuery = "MERGE INTO friendship(user_id, friend_id, friend_status_id) VALUES (?, ?, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
             PreparedStatement stmt = connection.prepareStatement(sqlQuery);
@@ -59,7 +59,7 @@ public class FriendDBStorage implements FriendStorage {
         FriendStatus friendStatusUnConfirmed = getStatusFriendship(1);
         FriendStatus friendStatusConfirmed = getStatusFriendship(2);
 
-        String sqlQuery = "MERGE INTO FRIENDSHIP(USER_ID, FRIEND_ID, FRIEND_STATUS_ID) VALUES (?, ?, ?)";
+        String sqlQuery = "MERGE INTO friendship(user_id, friend_id, friend_status_id) VALUES (?, ?, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
             PreparedStatement stmt = connection.prepareStatement(sqlQuery);
@@ -83,7 +83,7 @@ public class FriendDBStorage implements FriendStorage {
 
     @Override
     public void deleteFriend(Integer userId, Integer friendId) {
-        final String sqlQuery = "DELETE FROM FRIENDSHIP WHERE USER_ID = ? AND FRIEND_ID = ?";
+        final String sqlQuery = "DELETE FROM friendship WHERE user_id = ? AND friend_id = ?";
         jdbcTemplate.update(sqlQuery, userId, friendId);
 
         log.info("Пользователь c id " + friendId + " успешно удален " +
@@ -93,19 +93,19 @@ public class FriendDBStorage implements FriendStorage {
     @Override
     public List<User> getUserFriends(Integer userId) {
         final String sqlQuery = "SELECT * " +
-                " FROM USERS AS U" +
-                " JOIN FRIENDSHIP AS F ON U.USER_ID = F.FRIEND_ID" +
-                " WHERE F.USER_ID = ?";
+                " FROM users AS u" +
+                " JOIN friendship AS f ON u.user_id = f.friend_id" +
+                " WHERE f.user_id = ?";
         return jdbcTemplate.query(sqlQuery, UserDBStorage::makeUser, userId);
     }
 
     @Override
     public List<User> getCommonFriends(Integer userId, Integer otherId) {
         final String sqlQuery = "SELECT * " +
-                " FROM USERS AS U " +
-                " JOIN FRIENDSHIP AS FU ON U.USER_ID = FU.FRIEND_ID " +
-                " JOIN FRIENDSHIP AS FO ON U.USER_ID = FO.FRIEND_ID " +
-                " WHERE FU.USER_ID = ? AND FO.USER_ID = ?";
+                " FROM users AS U " +
+                " JOIN friendship AS fu ON u.user_id = fu.friend_id " +
+                " JOIN friendship AS fo ON u.user_id = fo.friend_id " +
+                " WHERE fu.user_id = ? AND fo.user_id = ?";
         return jdbcTemplate.query(sqlQuery, UserDBStorage::makeUser, userId, otherId);
     }
 }
