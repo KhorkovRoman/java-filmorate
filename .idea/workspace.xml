@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="feat: доработать тесты storage">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmDBStorageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FriendDBStorageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/GenreDBStorageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/LikeDBStorageTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/MpaDBStorageTests.java" afterDir="false" />
+    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="feat: доработать тесты storage, внести правки">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FilmDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FilmDBStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FriendDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/FriendDBStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/GenreDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/GenreDBStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/LikeDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/LikeDBStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/MpaDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/MpaDBStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/UserDBStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/dao/UserDBStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/filmorate/model/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/test.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/FilmoRateApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/UserDBStorageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +121,7 @@
       <recent name="ru.yandex.practicum.filmorate" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.FilmorateApplication">
+  <component name="RunManager" selected="JUnit.All in java-filmorate">
     <configuration name="All in java-filmorate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <option name="PACKAGE_NAME" value="" />
@@ -311,7 +298,7 @@
       <workItem from="1657913214517" duration="3562000" />
       <workItem from="1657969641423" duration="2396000" />
       <workItem from="1657985294391" duration="16146000" />
-      <workItem from="1658060735317" duration="10694000" />
+      <workItem from="1658060735317" duration="11340000" />
     </task>
     <task id="LOCAL-00001" summary="feat: добавить картинку схемы базы данных">
       <created>1657985860045</created>
@@ -348,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658006801377</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: доработать тесты storage, внести правки">
+      <created>1658082588798</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1658082588798</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +377,8 @@
     <MESSAGE value="feat: поправить примеры SQL запросов" />
     <MESSAGE value="feat: добавить тесты storage" />
     <MESSAGE value="feat: доработать тесты storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: доработать тесты storage" />
+    <MESSAGE value="feat: доработать тесты storage, внести правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: доработать тесты storage, внести правки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
