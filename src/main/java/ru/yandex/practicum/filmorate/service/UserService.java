@@ -7,149 +7,58 @@ import org.springframework.stereotype.Service;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.User;
 import ru.yandex.practicum.filmorate.storage.user.UserStorage;
+import ru.yandex.practicum.filmorate.storage.user.ValidationUser;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
 public class UserService {
 
     private final UserStorage userStorage;
+    private final ValidationUser validationUser;
 
     @Autowired
-    public UserService(UserStorage userStorage) {
+    public UserService(UserStorage userStorage, ValidationUser validationUser) {
         this.userStorage = userStorage;
+        this.validationUser = validationUser;
+    }
+
+    public User createUser(User user) {
+        validationUser.validateUser(user);
+        return userStorage.createUser(user);
+    }
+
+    public User getUserById(Integer userId) {
+        User user = userStorage.getUserById(userId);
+        if (user == null) {
+            throw new ValidationException(HttpStatus.NOT_FOUND,
+                    "Пользователя c id " + userId + " нет в базе.");
+        }
+        log.info("Пользователь c id " + userId + " найден в базе.");
+        return user;
     }
 
     public Collection<User> getAllUsers() {
         return userStorage.getAllUsers();
     }
 
-    public User createUser(User user) {
-        return userStorage.createUser(user);
-    }
-
     public User updateUser(User user) {
+        validateUser(user.getId());
+        validationUser.validateUser(user);
         return userStorage.updateUser(user);
     }
 
     public void deleteUser(User user) {
+        validationUser.validateUser(user);
         userStorage.deleteUser(user);
     }
 
-    public User addFriend(Integer userId, Integer friendId) {
-        if (userStorage.getUsers().containsKey(friendId)) {
-            User user = userStorage.getUserById(userId);
-            if (user == null) {
-                throw new ValidationException(HttpStatus.NOT_FOUND,
-                        "Пользователя c id " + userId + " нет в базе.");
-            }
-            Set<Integer> userFriends = user.getFriends();
-            userFriends.add(friendId);
-            log.info("Пользователь c id " + friendId + " успешно записан " +
-                    "в друзья к " + user + ".");
-
-            User friendUser = userStorage.getUserById(friendId);
-            Set<Integer> friendUserFriends = friendUser.getFriends();
-            friendUserFriends.add(userId);
-
-            log.info("Пользователь c id " + userId + " успешно записан " +
-                    "в друзья к " + friendUser + ".");
-
-            return user;
-        } else {
-            throw new ValidationException(HttpStatus.NOT_FOUND,
-                    "Пользователя c id " + friendId + " нет в базе.");
-        }
-    }
-
-    public void deleteFriend(Integer userId, Integer friendId) {
-        if (userStorage.getUsers().containsKey(friendId)) {
-            User user = userStorage.getUserById(userId);
-            if (user == null) {
-                throw new ValidationException(HttpStatus.NOT_FOUND,
-                        "Пользователя c id " + userId + " нет в базе.");
-            }
-            Set<Integer> userFriends = user.getFriends();
-            userFriends.remove(friendId);
-            log.info("Пользователь c id " + friendId + " успешно удален " +
-                    "из друзей " + user + ".");
-
-            User userFriend = userStorage.getUserById(friendId);
-            Set<Integer> userFriendFriends = userFriend.getFriends();
-            userFriendFriends.remove(userId);
-            log.info("Пользователь c id " + userId + " успешно удален " +
-                    "из друзей " + userFriend + ".");
-
-        } else {
-            throw new ValidationException(HttpStatus.NOT_FOUND,
-                    "Пользователя c id " + friendId + " нет в базе.");
-        }
-    }
-
-    public User getUser(Integer userId) {
+    public void validateUser(Integer userId) {
         User user = userStorage.getUserById(userId);
         if (user == null) {
             throw new ValidationException(HttpStatus.NOT_FOUND,
                     "Пользователя c id " + userId + " нет в базе.");
         }
-
-        log.info("Пользователь c id " + userId + " найден в базе.");
-        return user;
-    }
-
-    public List<User> getUserFriends(Integer userId) {
-        User user = userStorage.getUserById(userId);
-        if (user == null) {
-            throw new ValidationException(HttpStatus.NOT_FOUND,
-                    "Пользователя c id " + userId + " нет в базе.");
-        }
-
-        Set<Integer> userFriends = user.getFriends();
-
-        List<User> userList = new ArrayList<>();
-        for (Integer i: userFriends) {
-            User userToAdd = userStorage.getUserById(i);
-            userList.add(userToAdd);
-        }
-
-        log.info("Список пользователей выведен: " + userList);
-        return userList;
-    }
-
-    public List<User> getUserFriendsCommon(Integer userId, Integer otherId) {
-        User user = userStorage.getUserById(userId);
-        if (user == null) {
-            throw new ValidationException(HttpStatus.NOT_FOUND,
-                    "Пользователя c id " + userId + " нет в базе.");
-        }
-
-        Set<Integer> userFriends = user.getFriends();
-        List<User> userFriendList = new ArrayList<>();
-        for (Integer i: userFriends) {
-            User userToAdd = userStorage.getUsers().get(i);
-            userFriendList.add(userToAdd);
-        }
-
-        User otherUser = userStorage.getUserById(otherId);
-        if (otherUser == null) {
-            throw new ValidationException(HttpStatus.NOT_FOUND,
-                    "Пользователя c id " + otherId + " нет в базе.");
-        }
-
-        Set<Integer> otherUserFriends = otherUser.getFriends();
-        List<User> otherUserFriendList = new ArrayList<>();
-        for (Integer i: otherUserFriends) {
-            User userToAdd = userStorage.getUserById(i);
-            otherUserFriendList.add(userToAdd);
-        }
-
-        List<User> matches = userFriendList.stream()
-                .filter(otherUserFriendList::contains)
-                .collect(Collectors.toList());
-
-        log.info("Список общих друзе выведен." + matches);
-        return matches;
     }
 }

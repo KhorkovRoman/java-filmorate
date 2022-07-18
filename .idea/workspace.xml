@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="07d29ae7-6bb4-4ce3-9419-1c51eddb912c" name="Changes" comment="feat: доработать тесты storage, внести правки">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +33,24 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="controllers-films-users" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,7 +80,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Roman/dev/java-filmorate&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Roman/dev/java-filmorate/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,8 +89,19 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;f0df34eea21e3d373f145aba7609027e&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;H2&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;H2&quot;
+    ]
   }
 }</component>
   <component name="Push.Settings">
@@ -84,27 +110,27 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roman\dev\java-filmorate\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roman\dev\java-filmorate\src\main\resources" />
+      <recent name="C:\Users\Roman\dev\java-filmorate" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.yandex.practicum.filmorate" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.FilmorateApplication">
-    <configuration name="FilmControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in java-filmorate">
+    <configuration name="All in java-filmorate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.yandex.practicum.filmorate.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmorateApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GenreDBStorageTests.testGetAllGenres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -113,29 +139,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmorateApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FilmorateApplicationTests.userCreateValidationBirthday" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-filmorate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.yandex.practicum.filmorate.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmorateApplicationTests" />
-      <option name="METHOD_NAME" value="userCreateValidationBirthday" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.GenreDBStorageTests" />
+      <option name="METHOD_NAME" value="testGetAllGenres" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmorateApplicationTests.userCreateValidationEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GenreDBStorageTests.testLoadFilmGenres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -144,14 +155,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.FilmorateApplicationTests" />
-      <option name="METHOD_NAME" value="userCreateValidationEmail" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.GenreDBStorageTests" />
+      <option name="METHOD_NAME" value="testLoadFilmGenres" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GenreDBStorageTests.testSetFilmGenres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-filmorate" />
       <extension name="coverage">
         <pattern>
@@ -160,8 +171,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
-      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.UserControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.GenreDBStorageTests" />
+      <option name="METHOD_NAME" value="testSetFilmGenres" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MpaDBStorageTests.testGetAllMpa" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-filmorate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.yandex.practicum.filmorate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.MpaDBStorageTests" />
+      <option name="METHOD_NAME" value="testGetAllMpa" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="JUnit.FilmControllerTest" />
-        <item itemvalue="JUnit.FilmorateApplicationTests" />
-        <item itemvalue="JUnit.FilmorateApplicationTests.userCreateValidationBirthday" />
-        <item itemvalue="JUnit.FilmorateApplicationTests.userCreateValidationEmail" />
+        <item itemvalue="JUnit.All in java-filmorate" />
+        <item itemvalue="JUnit.GenreDBStorageTests.testGetAllGenres" />
+        <item itemvalue="JUnit.MpaDBStorageTests.testGetAllMpa" />
+        <item itemvalue="JUnit.GenreDBStorageTests.testLoadFilmGenres" />
+        <item itemvalue="JUnit.GenreDBStorageTests.testSetFilmGenres" />
       </list>
     </recent_temporary>
   </component>
@@ -236,8 +264,85 @@
       <workItem from="1655567258973" duration="11022000" />
       <workItem from="1655656954168" duration="3730000" />
       <workItem from="1656531244217" duration="1301000" />
-      <workItem from="1656534347382" duration="85000" />
+      <workItem from="1656534347382" duration="765000" />
+      <workItem from="1656698289949" duration="2038000" />
+      <workItem from="1656703511848" duration="4000" />
+      <workItem from="1656703748202" duration="53000" />
+      <workItem from="1656779623178" duration="542000" />
+      <workItem from="1656780677564" duration="9092000" />
+      <workItem from="1656792688374" duration="142000" />
+      <workItem from="1656792857925" duration="82000" />
+      <workItem from="1656792974191" duration="153000" />
+      <workItem from="1656793153470" duration="3268000" />
+      <workItem from="1656865025573" duration="10904000" />
+      <workItem from="1656922778854" duration="8606000" />
+      <workItem from="1656951067137" duration="19000" />
+      <workItem from="1657038130039" duration="8189000" />
+      <workItem from="1657091563751" duration="3463000" />
+      <workItem from="1657110791069" duration="1580000" />
+      <workItem from="1657124955936" duration="14212000" />
+      <workItem from="1657205958981" duration="7989000" />
+      <workItem from="1657220950545" duration="8207000" />
+      <workItem from="1657303407446" duration="6021000" />
+      <workItem from="1657468757962" duration="9064000" />
+      <workItem from="1657561701594" duration="14171000" />
+      <workItem from="1657609757619" duration="3842000" />
+      <workItem from="1657625181375" duration="551000" />
+      <workItem from="1657638374573" duration="278000" />
+      <workItem from="1657645579062" duration="7253000" />
+      <workItem from="1657695859544" duration="4256000" />
+      <workItem from="1657728047749" duration="17127000" />
+      <workItem from="1657782269361" duration="5458000" />
+      <workItem from="1657819840845" duration="14049000" />
+      <workItem from="1657898952314" duration="8302000" />
+      <workItem from="1657913214517" duration="3562000" />
+      <workItem from="1657969641423" duration="2396000" />
+      <workItem from="1657985294391" duration="16146000" />
+      <workItem from="1658060735317" duration="11340000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: добавить картинку схемы базы данных">
+      <created>1657985860045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657985860045</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: добавить примеры SQL запросов">
+      <created>1657987505275</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657987505275</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: поправить примеры SQL запросов">
+      <created>1657987747599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657987747599</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: добавить тесты storage">
+      <created>1657999580921</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657999580921</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: доработать тесты storage">
+      <created>1658006801377</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658006801377</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: доработать тесты storage, внести правки">
+      <created>1658082588798</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1658082588798</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +370,25 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: добавить картинку схемы базы данных" />
+    <MESSAGE value="feat: добавить примеры SQL запросов" />
+    <MESSAGE value="feat: поправить примеры SQL запросов" />
+    <MESSAGE value="feat: добавить тесты storage" />
+    <MESSAGE value="feat: доработать тесты storage" />
+    <MESSAGE value="feat: доработать тесты storage, внести правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: доработать тесты storage, внести правки" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/java_filmorate$FilmControllerTest.ic" NAME="FilmControllerTest Coverage Results" MODIFIED="1654797507246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
